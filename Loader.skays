@@ -14,12 +14,12 @@ if SupportedGames[game.PlaceId] then
     local getName = SupportedGames[game.PlaceId].Name
     local checkMT = SupportedGames[game.PlaceId].Maintenance
     local g
-    local p = pcall(function() g = game:HttpGet("https://raw.githubusercontent.com/GramxPerson/GramxProject/main/GamesSupported/"..getName..'.gp') end)
+    local p = pcall(function() g = game:HttpGet("https://raw.githubusercontent.com/GramxPerson/GramxProject/main/GamesSupported/"..getName..'.skays') end)
     if p == true and not checkMT then
         loadstring(g)()
     elseif p == true and checkMT then
         plr:Kick('[GP] System\nscript on maintenance/updating\nJoin discord for more info \ndiscord.gg/rH6yZ83ESq\n')
-        setclipboard('discord.gg/rH6yZ83ESq')
+        setclipboard('https://discord.gg/Rh9hNBDj')
      
         if request then
             request(
@@ -33,7 +33,7 @@ if SupportedGames[game.PlaceId] then
                     Body = game:GetService("HttpService"):JSONEncode(
                         {
                             cmd = "INVITE_BROWSER",
-                            args = {code = "rH6yZ83ESq"},
+                            args = {code = "Rh9hNBDj"},
                             nonce = game:GetService("HttpService"):GenerateGUID(false)
                         }
                     )
@@ -43,7 +43,7 @@ if SupportedGames[game.PlaceId] then
     end
 else
     plr:Kick('[GP] System\nGame not supported\nJoin discord for more info \ndiscord.gg/rH6yZ83ESq\n')
-    setclipboard('discord.gg/rH6yZ83ESq')
+    setclipboard('https://discord.gg/Rh9hNBDj')
 
      
     if request then
@@ -58,7 +58,7 @@ else
                 Body = game:GetService("HttpService"):JSONEncode(
                     {
                         cmd = "INVITE_BROWSER",
-                        args = {code = "rH6yZ83ESq"},
+                        args = {code = "Rh9hNBDj"},
                         nonce = game:GetService("HttpService"):GenerateGUID(false)
                     }
                 )
