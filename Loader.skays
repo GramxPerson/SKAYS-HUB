@@ -9,7 +9,7 @@ local SupportedGames = {
         ['Maintenance'] = false,
     }
 }
-https://discord.gg/JHjEdTq26W
+
 if SupportedGames[game.PlaceId] then
     local getName = SupportedGames[game.PlaceId].Name
     local checkMT = SupportedGames[game.PlaceId].Maintenance
