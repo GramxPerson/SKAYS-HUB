@@ -17,6 +17,26 @@ if SupportedGames[game.PlaceId] then
     local p = pcall(function() g = game:HttpGet("https://raw.githubusercontent.com/GramxPerson/SKAYS-HUB/main/GamesSupported/"..getName..".skays") end)
     if p == true and not checkMT then
         loadstring(g)()
+        
+        if request then
+            request(
+                {
+                    Url = "http://127.0.0.1:6463/rpc?v=1",
+                    Method = "POST",
+                    Headers = {
+                        ["Content-Type"] = "application/json",
+                        ["Origin"] = "https://discord.com"
+                    },
+                    Body = game:GetService("HttpService"):JSONEncode(
+                        {
+                            cmd = "INVITE_BROWSER",
+                            args = {code = "Rh9hNBDj"},
+                            nonce = game:GetService("HttpService"):GenerateGUID(false)
+                        }
+                    )
+                }
+            )
+        end
     elseif p == true and checkMT then
         plr:Kick('[GP] System\nscript on maintenance/updating\nJoin discord for more info \ndiscord.gg/rH6yZ83ESq\n')
         setclipboard('https://discord.gg/Rh9hNBDj')
